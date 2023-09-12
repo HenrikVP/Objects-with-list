@@ -16,16 +16,7 @@
             Console.WriteLine("\n***Actors***");
             foreach (var actor in data.actors)
             {
-                Console.WriteLine("\n" + actor.Name);
-                Console.WriteLine("\nMovies");
-                foreach (var movie in data.movies)
-                {
-                    foreach (var movieActor in movie.Actors)
-                    {
-                        if (movieActor.Name == actor.Name)
-                            Console.WriteLine(movie.Name);
-                    }
-                }
+                actor.ShowActor(data.movies);
             }
         }
 
@@ -34,12 +25,7 @@
             Console.WriteLine("\n***Movies***");
             foreach (var movie in data.movies)
             {
-                Console.WriteLine("\n"+movie.Name);
-                Console.WriteLine("\nActors");
-                foreach (var actor in movie.Actors)
-                {
-                    Console.WriteLine(actor.Name);
-                }
+                movie.ShowMovie();
             }
         }
     }
